@@ -1,0 +1,142 @@
+html, body {
+	margin: 0;
+	min-height: 100vh;
+	width: 100%;
+
+	overflow: auto;
+	overflow-x: hidden;
+
+	
+	font-family:'agrandirnarrow';
+	font-style: normal;
+	font-weight: 100;
+}
+:root {
+	--black: #000000;
+}
+/* FONT-FACE */
+@font-face {
+    font-family: 'agrandirnarrow';
+    src: url('/styles/fonts/agrandir-narrow-webfont.woff2') format('woff2'),
+         url('/styles/fonts/agrandir-narrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'agrandirregular';
+    src: url('/styles/fonts/agrandir-regular-webfont.woff2') format('woff2'),
+         url('/styles/fonts/agrandir-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'agrandirwide_light';
+    src: url('/styles/fonts/agrandir-widelight-webfont.woff2') format('woff2'),
+         url('/styles/fonts/agrandir-widelight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+	font-family: 'pp_woodlandultralight';
+	src: url('/styles/fonts/ppwoodland-ultralight-webfont.woff2') format('woff2'),
+		url('/styles/fonts/ppwoodland-ultralight-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--soft-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.15);
+	--white: #ffffff;
+}
+
+
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+}
+
+/* Transform */
+.transform-1 {
+	/* transform: rotate3d(1, 1, 1, 20deg);
+
+	transition: height 1s ease-out, transform 0.5s ease-out;
+	-webkit-transition: height 1s ease-out, transform 0.5s ease-out;
+	-moz-transition: height 1s ease-out, transform 0.5s ease-out;
+	-o-transition: height 1s ease-out, transform 0.5s ease-out; */
+
+	
+}
+.no-transform:hover {
+	transform: none;
+}
+
+@keyframes slideFromTop {
+	0% {
+	  transform: translateY(-150%);
+	}
+	100% {
+	  transform: translateY(0);
+	}
+  }
+
+div.frame {
+	position: absolute;
+
+	min-width: 300px;
+	min-height: 405px;
+
+	margin-top: 18vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 1.2em;
+	text-align: center;
+
+	border-radius: 20px;
+
+	background: url(/styles/images/Book-v2.png);
+	background-position: center;
+	background-size: cover;
+
+	animation: 2s ease-in 0s 1 slideFromTop;
+
+	z-index: 10;
+}
+.frame p span {
+	width: 100%;
+
+	font-size: 1.8em;
+
+	font-family:'pp_woodlandultralight';
+}
+
+div.shadow {
+	position: absolute;
+
+	height: 8%;
+	width: 35%;
+	min-width: 360px;
+	min-height: 120px;
+
+	margin-top: 63vh; 
+
+	background: #D2D3E3;
+
+	filter: blur(20px);
+
+	border-radius: 100%;
+
+	z-index: 5;
+
+}
+
+
+
