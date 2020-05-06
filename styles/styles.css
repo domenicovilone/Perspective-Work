@@ -9,7 +9,10 @@ html, body {
 	
 	font-family:'agrandirnarrow';
 	font-style: normal;
-	font-weight: 100;
+	font-weight: 300;
+
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 :root {
 	--black: #000000;
@@ -50,6 +53,8 @@ html, body {
 :root {
 	--soft-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.15);
 	--white: #ffffff;
+	--black-border: 1px solid #000000;
+	--baby-blue: #00c3ff;
 }
 
 
@@ -68,9 +73,7 @@ html, body {
 	transition: height 1s ease-out, transform 0.5s ease-out;
 	-webkit-transition: height 1s ease-out, transform 0.5s ease-out;
 	-moz-transition: height 1s ease-out, transform 0.5s ease-out;
-	-o-transition: height 1s ease-out, transform 0.5s ease-out; */
-
-	
+	-o-transition: height 1s ease-out, transform 0.5s ease-out;	 */
 }
 .no-transform:hover {
 	transform: none;
@@ -88,34 +91,54 @@ html, body {
 div.frame {
 	position: absolute;
 
+	height:100%;
+	width:  100%;
 	min-width: 300px;
 	min-height: 405px;
 
-	margin-top: 18vh;
+	/* margin-top: 18vh; */
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	font-size: 1.2em;
+	font-size: 1.4em;
 	text-align: center;
 
 	border-radius: 20px;
+	/* border: var(--black-border); */
 
-	background: url(/styles/images/Book-v2.png);
+	/* background: url(/styles/images/WOP-ComingSoon-v3.png);
 	background-position: center;
 	background-size: cover;
+	background: var(--white); */
+
 
 	animation: 2s ease-in 0s 1 slideFromTop;
 
 	z-index: 10;
 }
+.frame p {
+	position: absolute;
+
+	color: var(--baby-blue);
+
+	z-index: 15;
+}
 .frame p span {
 	width: 100%;
 
-	font-size: 1.8em;
+	font-size: 1.2em;
 
-	font-family:'pp_woodlandultralight';
+	/* font-family:'pp_woodlandultralight'; */
+}
+.frame img {
+	position: absolute;
+
+	height: 80%;
+	width: auto;
+
+	z-index: 5;
 }
 
 div.shadow {
@@ -128,7 +151,7 @@ div.shadow {
 
 	margin-top: 63vh; 
 
-	background: #D2D3E3;
+	/* background: #D2D3E3; */
 
 	filter: blur(20px);
 
