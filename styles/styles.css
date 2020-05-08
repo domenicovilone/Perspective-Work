@@ -59,6 +59,7 @@ html, body {
 :root {
 	--soft-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.15);
 	--white-blur-shadow: 0px 0px 40px 35px rgba(255,255,255,1);
+	--grey-blur-shadow: 0px 0px 16px -1px rgba(130,130,130,1);
 
 	--black-border: 1px solid #000000;
 	--lightgrey-border: 1px solid #d7d7d7;
@@ -69,6 +70,8 @@ html, body {
 	--black: #000000;
 	--low-opacity-grey: #dededee8;
 	--medium-grey: #828282;
+	--low-medium-grey: #cacaca;
+	--light-grey: #d7d7d7;
 	
 }
 
@@ -114,7 +117,6 @@ ANIMATION KEYFRAMES
 MASK
 ----
 */
-
 div.mask {
 	position: fixed;
 	top: -50px;
@@ -124,7 +126,7 @@ div.mask {
 	height: 50px;
 
 
-	background: white;
+	background: none;
 
 	border-radius: 100%;
 
@@ -132,9 +134,45 @@ div.mask {
 	-moz-box-shadow: var(--white-blur-shadow);
 	box-shadow: var(--white-blur-shadow);
 
-	z-index: 20;
+	z-index: 25;
 }
+/* 
+====
+HEADER
+----
+*/
+nav {
+	position: fixed;
+	left: 5px;
+	top: 10px;
 
+	height: 10%;
+	width: 60%;
+
+	mix-blend-mode: difference;
+
+	z-index: 200;
+}
+div.header {
+	height: 100%;
+
+	display: flex;
+	background: transparent;
+	opacity: 1;
+
+	z-index: 50;
+}
+div.header div {
+	position: absolute;
+	margin: 0;
+
+	color: var(--white);
+
+	font-size: 7vw;
+	text-transform: uppercase;
+
+	z-index: 200;
+}
 
 /* 
 ======
@@ -159,6 +197,8 @@ div.frame {
 	border-radius: 20px;
 
 	animation: 3s ease-out 0s 1 slideFromTop;
+
+	background: var(--white);
 
 	z-index: 10;
 }
@@ -205,11 +245,11 @@ div.conversation {
 
 	text-transform: uppercase;
 
-	-webkit-box-shadow: var(--inset-grey-border);
-	-moz-box-shadow: var(--inset-grey-border);
-	box-shadow: var(--inset-grey-border);
+	-webkit-box-shadow: var(--grey-blur-shadow);
+	-moz-box-shadow: var(--grey-blur-shadow);
+	box-shadow: var(--grey-blur-shadow);
 
-	background: var(--low-opacity-grey);
+	background: var(--low-medium-grey);
 
 	z-index: 15;
 }
@@ -262,9 +302,40 @@ div.conversation div:nth-child(3):hover {
 	text-transform: capitalize;
 }
 
+/* 
+=========
+COPYRIGHT
+---------
+*/
+div.copyright {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}
+div.copyright p {
+	font-size: 0.8em;
 
-/* MEDIA QUERRIES */
+	color: var(--medium-grey);
+
+	text-transform: uppercase;
+
+	margin: 0;
+}
+div.copyright p span {
+	visibility: hidden;
+	display: none;
+}
+
+/* 
+%%%%%%%%%%%%%%%%%%
+% MEDIA QUERRIES %
+%%%%%%%%%%%%%%%%%%
+*/
 @media screen and (max-width: 420px) {
+	div.header div {
+		/* font-size: 3em; */
+	}
+
 	div.wrapper {
 		height: auto;
 
@@ -289,6 +360,14 @@ div.conversation div:nth-child(3):hover {
 		margin-bottom: 10vh;
 	
 		text-align: center;
+	}
+	div.copyright {
+		position: static;
+	
+	}
+	div.copyright p span {
+		visibility: visible;
+		display: inline-block;
 	}
   }
 
