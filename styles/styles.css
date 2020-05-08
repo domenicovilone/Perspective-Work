@@ -12,6 +12,8 @@ html, body {
 
 	text-decoration: none;
 
+	background: var(--white);
+
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 
@@ -93,6 +95,14 @@ html, body {
 	-moz-transition: height 1s ease-out, transform 0.5s ease-out;
 	-o-transition: height 1s ease-out, transform 0.5s ease-out;	 */
 }
+.transform-2 {
+
+	transition: opacity 1s ease-in-out;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;	
+
+}
 .no-transform:hover {
 	transform: none;
 }
@@ -112,7 +122,9 @@ ANIMATION KEYFRAMES
 	  opacity: 1;
 	}
   }
-/* 
+
+
+  /* 
 ====
 MASK
 ----
@@ -144,9 +156,9 @@ HEADER
 nav {
 	position: fixed;
 	left: 5px;
-	top: 10px;
+	top: 5px;
 
-	height: 10%;
+	height: auto;
 	width: 60%;
 
 	mix-blend-mode: difference;
@@ -168,10 +180,60 @@ div.header div {
 
 	color: var(--white);
 
-	font-size: 7vw;
+	font-size: 6.5vw;
 	text-transform: uppercase;
 
 	z-index: 200;
+}
+
+/* 
+====
+INFO
+----
+*/
+div.info {
+	position: absolute;
+	top: 100px;
+	left: 5px;
+
+	width: 30%;
+	min-width: 300px;
+	height: auto;
+
+	font-size: 1.8em;
+
+	text-transform: uppercase;
+
+	color: var(--black);
+
+	cursor: pointer;
+
+	z-index: 25;
+}
+div.info .btn {
+	font-size: 5vw;
+	margin: 0;
+}
+div.info a {
+	color: var(--black);
+}
+div.info div.info-wrapper {
+	display: flex;
+	align-items: flex-start;
+
+	flex-wrap: wrap;
+
+
+}
+div.info div.info-hide {
+	/* display: none; */
+	/* visibility: hidden; */
+	opacity: 0;
+}
+div.info div.info-show {
+	/* display: block; */
+	/* visibility: visible; */
+	opacity: 1;
 }
 
 /* 
@@ -334,18 +396,48 @@ div.copyright p span {
 %%%%%%%%%%%%%%%%%%
 */
 @media screen and (max-width: 420px) {
+	/* Hides masks in mobile view to force all black header */
+	div.mask {
+		display: none;
+	}
+	/* Make header font-size bigger on mobile */
 	div.header div {
 		font-size: 10vw;
 	}
 
 	div.wrapper {
-		margin-top: 20px;
+		/* margin-top: 20px; */
 
 		height: auto;
 
 		flex-wrap: wrap;
 
 		animation: 4s ease-out 0s 1 slideFromTop;
+	}
+	/* Sets info-wrapper to no-display when on mobile*/
+	div.info div.info-hide {
+		display: none; 
+		/* visibility: hidden; */
+		opacity: 0;
+	}
+	div.info div.info-show {
+		display: block;
+		/* visibility: visible; */
+		opacity: 1;
+	}
+
+	div.info {
+		position: static;
+
+		height: 100%;
+		width: calc(100% - 10px);
+
+		margin-top: 60px;
+
+		font-size: 8vw;
+	}
+	div.info .btn {
+		font-size: 8vw;
 	}
 
 	div.frame {
