@@ -193,7 +193,7 @@ INFO
 */
 div.info {
 	position: absolute;
-	top: 100px;
+	top: 8vw;
 	left: 5px;
 
 	width: 30%;
@@ -422,12 +422,10 @@ div.copyright p span {
 	/* Sets info-wrapper to no-display when on mobile*/
 	div.info div.info-hide {
 		display: none; 
-		/* visibility: hidden; */
 		opacity: 0;
 	}
 	div.info div.info-show {
 		display: block;
-		/* visibility: visible; */
 		opacity: 1;
 	}
 
