@@ -215,7 +215,7 @@ div.frame {
 	font-size: 1.2em;
 }
 .frame img {
-	position: absolute;
+	position: relative;
 
 	height: 80%;
 	width: auto;
@@ -311,6 +311,8 @@ div.copyright {
 	position: absolute;
 	left: 20px;
 	bottom: 20px;
+
+	z-index: 15;
 }
 div.copyright p {
 	font-size: 0.8em;
@@ -333,10 +335,12 @@ div.copyright p span {
 */
 @media screen and (max-width: 420px) {
 	div.header div {
-		/* font-size: 3em; */
+		font-size: 10vw;
 	}
 
 	div.wrapper {
+		margin-top: 20px;
+
 		height: auto;
 
 		flex-wrap: wrap;
@@ -347,6 +351,8 @@ div.copyright p span {
 	div.frame {
 		position: static;
 		height: 90vh;
+
+		font-size: 1.2em;
 
 		animation: none;
 	}
