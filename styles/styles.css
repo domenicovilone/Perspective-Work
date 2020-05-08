@@ -88,12 +88,12 @@ html, body {
 
 /* Transform */
 .transform-1 {
-	/* transform: rotate3d(1, 1, 1, 20deg);
+	transform: rotate3d(1, 1, 1, 20deg);
 
 	transition: height 1s ease-out, transform 0.5s ease-out;
 	-webkit-transition: height 1s ease-out, transform 0.5s ease-out;
 	-moz-transition: height 1s ease-out, transform 0.5s ease-out;
-	-o-transition: height 1s ease-out, transform 0.5s ease-out;	 */
+	-o-transition: height 1s ease-out, transform 0.5s ease-out;	
 }
 .transform-2 {
 
@@ -155,7 +155,7 @@ HEADER
 */
 nav {
 	position: fixed;
-	left: 5px;
+	left: 2px;
 	top: 5px;
 
 	height: auto;
@@ -206,13 +206,13 @@ div.info {
 
 	color: var(--black);
 
-	cursor: pointer;
-
 	z-index: 25;
 }
 div.info .btn {
-	font-size: 5vw;
+	font-size: 3.5vw;
 	margin: 0;
+
+	cursor: pointer;
 }
 div.info a {
 	color: var(--black);
@@ -255,8 +255,6 @@ div.frame {
 
 	font-size: 1.4em;
 	text-align: center;
-
-	border-radius: 20px;
 
 	animation: 3s ease-out 0s 1 slideFromTop;
 
@@ -432,7 +430,12 @@ div.copyright p span {
 		height: 100%;
 		width: calc(100% - 10px);
 
+		padding-left: 10px;
+		padding-right: 10px;
+
 		margin-top: 60px;
+
+		background: var(--light-grey);
 
 		font-size: 8vw;
 	}
@@ -447,6 +450,8 @@ div.copyright p span {
 		font-size: 1.2em;
 
 		animation: none;
+
+		background: var(--black);
 	}
 
 	div.conversation {
@@ -456,6 +461,7 @@ div.copyright p span {
 		width: 300px;
 
 		margin-bottom: 10vh;
+		margin-top: 10vh;
 	
 		text-align: center;
 	}
