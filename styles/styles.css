@@ -74,6 +74,7 @@ html, body {
 	--medium-grey: #828282;
 	--low-medium-grey: #cacaca;
 	--light-grey: #d7d7d7;
+	--red-orange: #f1960d;
 	
 }
 
@@ -440,7 +441,7 @@ div.copyright p span {
 
 		margin-top: 60px;
 
-		background: var(--light-grey);
+		background: var(--red-orange);
 
 		font-size: 8vw;
 	}
