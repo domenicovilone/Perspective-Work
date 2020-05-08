@@ -243,6 +243,7 @@ FRAMES
 */
 div.frame {
 	position: absolute;
+	left: -50px;
 
 	height:100%;
 	width:  100%;
@@ -276,6 +277,7 @@ div.frame {
 }
 .frame img {
 	position: relative;
+	bottom: -40px;
 
 	height: 80%;
 	width: auto;
@@ -294,7 +296,10 @@ div.conversation {
 	bottom: 50px;
 
 	height: auto;
-	width: 280px;
+	/* max-height: calc(100% - 75px); */
+	max-height: 50vh;
+	width: auto;
+	max-width: 50vh;
 
 	border-radius: 15px;
 
@@ -304,6 +309,8 @@ div.conversation {
 	text-align: center;
 
 	text-transform: uppercase;
+
+	overflow-y: scroll;
 
 	-webkit-box-shadow: var(--grey-blur-shadow);
 	-moz-box-shadow: var(--grey-blur-shadow);
@@ -453,12 +460,18 @@ div.copyright p span {
 
 		background: var(--black);
 	}
+	div.frame img {
+		bottom: 0;
+	}
 
 	div.conversation {
 		position: static;
 
 		height: auto;
+		max-height: none;
 		width: 300px;
+
+		overflow-y: auto;
 
 		margin-bottom: 10vh;
 		margin-top: 10vh;
