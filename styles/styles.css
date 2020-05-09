@@ -65,6 +65,7 @@ html, body {
 
 	--black-border: 1px solid #000000;
 	--lightgrey-border: 1px solid #d7d7d7;
+	--royal-blue-border: 1px solid #a4bcff;
 	--inset-grey-border: inset 0px 0px 16px -1px rgba(130,130,130,1);
 
 	--baby-blue: #00c3ff;
@@ -75,6 +76,10 @@ html, body {
 	--low-medium-grey: #cacaca;
 	--light-grey: #d7d7d7;
 	--red-orange: #f1960d;
+	--brown: #b3a7a7;
+	--royal-blue: #a4bcff;
+	--forest-green: #2a6b47;
+
 	
 }
 
@@ -302,7 +307,7 @@ div.conversation {
 	width: auto;
 	max-width: 50vh;
 
-	border-radius: 15px;
+	border-radius: 3px;
 
 	padding-left: 20px;
 	padding-right: 20px;
@@ -313,17 +318,20 @@ div.conversation {
 
 	overflow-y: scroll;
 
-	-webkit-box-shadow: var(--grey-blur-shadow);
+	/* -webkit-box-shadow: var(--grey-blur-shadow);
 	-moz-box-shadow: var(--grey-blur-shadow);
-	box-shadow: var(--grey-blur-shadow);
+	box-shadow: var(--grey-blur-shadow); */
 
-	background: var(--low-medium-grey);
+	/* background: var(--low-medium-grey); */
+	background: var(--forest-green);
+
+	color: var(--royal-blue);
 
 	z-index: 15;
 }
 /* div 1 */
 div.conversation div:nth-child(1) {
-	border-bottom: var(--lightgrey-border);
+	border-bottom: var(--royal-blue-border);
 	
 	font-size: 1.4em;
 }
@@ -334,17 +342,19 @@ div.conversation div:nth-child(1) p {
 /* div 2 */
 div.conversation div:nth-child(2) {
 
-	border-bottom: var(--lightgrey-border);
+	border-bottom: var(--royal-blue-border);
 
 	text-align: left;
 
-	text-transform: none;
+	/* text-transform: none; */
 
 	font-size: 1.2em;
 }
 div.conversation div:nth-child(2) p {
 	margin-top: 20px;
 	margin-bottom: 20px;
+
+	text-transform: none;
 }
 /* div 3 */
 div.conversation div:nth-child(3) {
@@ -357,7 +367,7 @@ div.conversation div:nth-child(3) a {
 	margin-top: 20px;
 	margin-bottom: 20px;
 
-	color: var(--black);
+	color: var(--royal-blue);
 
 	font-size: 1.4em;
 
@@ -468,15 +478,25 @@ div.copyright p span {
 
 		height: auto;
 		max-height: none;
-		width: 300px;
+		width: 100%;
+		max-width: none;
 
 		overflow-y: auto;
 
+		border-radius: none;
+
 		margin-bottom: 10vh;
-		margin-top: 10vh;
+		/* margin-top: 10vh; */
+
+		font-size: 8vw;
 	
 		text-align: center;
 	}
+	/* set description text-size */
+	div.conversation div:nth-child(2) {
+		font-size: 6vw;
+	}
+
 	div.copyright {
 		position: static;
 	
