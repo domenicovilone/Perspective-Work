@@ -14,7 +14,7 @@ function toggleInfoWrapper(index){
     console.log("hello");
 
     if (infoWrapper.item(index).className == "info-wrapper info-hide transform-2") {
-        infoWrapper.item(index).className = "nfo-wrapper info-show transform-2";
+        infoWrapper.item(index).className = "info-wrapper info-show transform-2";
     } else {
         infoWrapper.item(index).className = "info-wrapper info-hide transform-2";
     }

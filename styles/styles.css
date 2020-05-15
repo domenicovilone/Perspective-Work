@@ -79,6 +79,7 @@ html, body {
 	--brown: #b3a7a7;
 	--royal-blue: #a4bcff;
 	--forest-green: #2a6b47;
+	--green: #55bd49;
 
 	
 }
@@ -111,6 +112,10 @@ html, body {
 }
 .no-transform:hover {
 	transform: none;
+}
+
+a:hover {
+	text-transform: capitalize;
 }
 
 /* 
@@ -191,6 +196,10 @@ div.header div {
 
 	z-index: 200;
 }
+div.header div a {
+	color: var(--white);
+	text-decoration: none;
+}
 
 /* 
 ====
@@ -228,17 +237,11 @@ div.info div.info-wrapper {
 	align-items: flex-start;
 
 	flex-wrap: wrap;
-
-
 }
 div.info div.info-hide {
-	/* display: none; */
-	/* visibility: hidden; */
 	opacity: 0;
 }
 div.info div.info-show {
-	/* display: block; */
-	/* visibility: visible; */
 	opacity: 1;
 }
 
@@ -298,14 +301,12 @@ CONVERSATION
 */
 div.conversation {
 	position: absolute;
-	right: 50px;
-	bottom: 50px;
+	right: 0;
+	bottom: 0px;
 
 	height: auto;
-	/* max-height: calc(100% - 75px); */
-	max-height: 50vh;
-	width: auto;
 	max-width: 50vh;
+	height: auto;
 
 	border-radius: 3px;
 
@@ -318,21 +319,22 @@ div.conversation {
 
 	overflow-y: scroll;
 
+	/* display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-wrap: wrap; */
+	vertical-align: baseline;
+
 	/* -webkit-box-shadow: var(--grey-blur-shadow);
 	-moz-box-shadow: var(--grey-blur-shadow);
 	box-shadow: var(--grey-blur-shadow); */
 
-	/* background: var(--low-medium-grey); */
-	background: var(--forest-green);
-
-	color: var(--royal-blue);
+	color: var(--black);
 
 	z-index: 15;
 }
 /* div 1 */
 div.conversation div:nth-child(1) {
-	border-bottom: var(--royal-blue-border);
-	
 	font-size: 1.4em;
 }
 div.conversation div:nth-child(1) p {
@@ -341,12 +343,7 @@ div.conversation div:nth-child(1) p {
 }
 /* div 2 */
 div.conversation div:nth-child(2) {
-
-	border-bottom: var(--royal-blue-border);
-
 	text-align: left;
-
-	/* text-transform: none; */
 
 	font-size: 1.2em;
 }
@@ -367,7 +364,7 @@ div.conversation div:nth-child(3) a {
 	margin-top: 20px;
 	margin-bottom: 20px;
 
-	color: var(--royal-blue);
+	color: var(--black);
 
 	font-size: 1.4em;
 
@@ -375,8 +372,6 @@ div.conversation div:nth-child(3) a {
 }
 /* hover effect:  */
 div.conversation div:nth-child(3):hover {
-	/* color: var(--medium-grey); */
-
 	text-transform: capitalize;
 }
 
@@ -411,7 +406,7 @@ div.copyright p span {
 % MEDIA QUERRIES %
 %%%%%%%%%%%%%%%%%%
 */
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 520px) {
 	/* Hides masks in mobile view to force all black header */
 	div.mask {
 		display: none;
@@ -451,7 +446,7 @@ div.copyright p span {
 
 		margin-top: 60px;
 
-		background: var(--red-orange);
+		background: var(--green);
 
 		font-size: 8vw;
 	}
@@ -467,7 +462,7 @@ div.copyright p span {
 
 		animation: none;
 
-		background: var(--black);
+		background: var(--low-opacity-grey);
 	}
 	div.frame img {
 		bottom: 0;
