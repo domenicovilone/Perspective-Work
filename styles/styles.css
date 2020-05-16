@@ -414,7 +414,6 @@ div.q-wrapper {
 div.q-wrapper p:nth-child(1) {
 	text-transform: uppercase;
 	font-size: var(--sub-header);
-	font-weight: 700;
 }
 div.q-wrapper div.description {
 	 width: 50%;
