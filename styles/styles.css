@@ -555,6 +555,10 @@ div.copyright p span {
 		min-width: auto;
 	}
 
+	nav.navigation-q {
+		position: relative;
+	}
+
 	div.copyright {
 		position: static;
 	
