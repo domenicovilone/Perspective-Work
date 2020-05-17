@@ -248,6 +248,8 @@ div.info div.info-wrapper {
 	align-items: flex-start;
 
 	flex-wrap: wrap;
+
+	cursor: default;
 }
 div.info div.info-hide {
 	opacity: 0;
