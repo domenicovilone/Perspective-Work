@@ -371,20 +371,31 @@ div.conversation div:nth-child(3) {
 	/* padding-top: 20px; */
 	padding-bottom: 40px;
 
+	font-size: 1.4em;
+
+	/* display: flex;
+	justify-items: center; */
+
 	text-transform: uppercase;
 }
 div.conversation div:nth-child(3) a {
-	margin-top: 20px;
 	margin-bottom: 40px;
 
 	color: var(--black);
 
-	font-size: 1.4em;
+	font-size: 48px;
 
 	text-decoration: none;
 }
 /* hover effect:  */
-div.conversation div:nth-child(3):hover {
+div.conversation div:nth-child(3) :hover {
+	text-transform: capitalize;
+}
+div.link-questionnaire {
+	display: flex;
+	justify-content: space-evenly;
+}
+div.link-questionnaire:hover {
 	text-transform: capitalize;
 }
 
@@ -492,7 +503,7 @@ div.copyright p span {
 
 		margin-top: 260px;
 
-		background: var(--red-orange);
+		background: var(--light-grey);
 
 		font-size: 8vw;
 
@@ -504,7 +515,8 @@ div.copyright p span {
 
 	div.frame {
 		position: static;
-		height: 90vh;
+		height: auto;
+		width: 100%;
 
 		font-size: 1.2em;
 
@@ -514,6 +526,9 @@ div.copyright p span {
 	}
 	div.frame img {
 		bottom: 0;
+
+		width: 100%;
+		height: auto;
 	}
 
 	div.conversation {
@@ -538,6 +553,9 @@ div.copyright p span {
 	/* set description text-size */
 	div.conversation div:nth-child(2) {
 		font-size: var(--normal-mobile);
+	}
+	div.conversation div:nth-child(3) {
+		font-size: var(--sub-header);
 	}
 
 	/* reformat width from 80% to 100% on mobile  */
