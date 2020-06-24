@@ -1,21 +1,38 @@
 // Element to modify
-var infoWrapper = document.querySelectorAll('div.info div.info-wrapper');
-
+var LandingPageWrapper = document.querySelectorAll('div.landing-page');
+var MainWrapper = document.querySelectorAll('div.wrapper-main');
+var libWrapper = document.querySelector('div.lib-wrapper');
+var bookDetailsWrapper = document.querySelector('div.book-details-wrapper');
 
 // Trigger elements
-var infoBtn = document.querySelectorAll('div.info .btn');
+var LandingPageBtn = document.querySelectorAll('div.landing-page p');
+var viewBook1 = document.querySelector('#view-book');
 
-infoBtn.forEach( (el,i) => el.addEventListener("click", function(){
-	toggleInfoWrapper(i);
+// Toggle landing page wrapper
+LandingPageBtn.forEach( (el,i) => el.addEventListener("click", function(){
+	toggleLandingPageWrapper(i);
 }));
 
-// Toggles infoWrapper
-function toggleInfoWrapper(index){
-    console.log("hello");
+// Visit Book 1
+viewBook1.addEventListener("click", function(){
+    revealBook1();
+});
 
-    if (infoWrapper.item(index).className == "info-wrapper info-hide transform-2") {
-        infoWrapper.item(index).className = "info-wrapper info-show transform-2";
-    } else {
-        infoWrapper.item(index).className = "info-wrapper info-hide transform-2";
-    }
+// Toggles infoWrapper
+function toggleLandingPageWrapper(index){
+    LandingPageWrapper.item(index).className = "landing-page smooth-slide-up";
+    MainWrapper.item(index).className = "wrapper-main smooth-slide-up-main-wrapper";
+
+    document.querySelector('body').style.overflow = "visible";
+}
+
+function revealBook1(){
+    scrollToTop();
+
+    libWrapper.className = "lib-wrapper hidden";
+    bookDetailsWrapper.className = "book-details-wrapper";
+}
+
+function scrollToTop(){
+    window.scrollTo(0,0);
 }

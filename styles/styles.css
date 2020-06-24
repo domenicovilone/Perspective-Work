@@ -1,15 +1,14 @@
-html, body {
+html {
 	margin: 0;
-	min-height: 100vh;
 	width: 100%;
 	height: 100%;
 
 	overflow: auto;
 	overflow-x: hidden;
-	
-	font-family:'neue_montrealregular';
+
+	font-family: aktiv-grotesk, sans-serif;
+	font-weight: 400;
 	font-style: normal;
-	font-weight: 300;
 
 	text-decoration: none;
 
@@ -19,44 +18,21 @@ html, body {
 	-webkit-font-smoothing: antialiased;
 
 }
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+
+	overflow: auto;
+	overflow-x: hidden;
+}
 /* FONT-FACE */
 @font-face {
     font-family: 'agrandirnarrow';
     src: url('/styles/fonts/agrandir-narrow-webfont.woff2') format('woff2'),
          url('/styles/fonts/agrandir-narrow-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-    font-family: 'agrandirregular';
-    src: url('/styles/fonts/agrandir-regular-webfont.woff2') format('woff2'),
-         url('/styles/fonts/agrandir-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-    font-family: 'agrandirwide_light';
-    src: url('/styles/fonts/agrandir-widelight-webfont.woff2') format('woff2'),
-         url('/styles/fonts/agrandir-widelight-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-	font-family: 'pp_woodlandultralight';
-	src: url('/styles/fonts/ppwoodland-ultralight-webfont.woff2') format('woff2'),
-		url('/styles/fonts/ppwoodland-ultralight-webfont.woff') format('woff');
-	font-weight: normal;
 	font-style: normal;
-}
-@font-face {
-    font-family: 'neue_montrealregular';
-    src: url('/styles/fonts/neuemontreal-regular-webfont.woff2') format('woff2'),
-         url('/styles/fonts/neuemontreal-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 :root {
@@ -64,14 +40,21 @@ html, body {
 	--white-blur-shadow: 0px 0px 40px 35px rgba(255,255,255,1);
 	--grey-blur-shadow: 0px 0px 16px -1px rgba(130,130,130,1);
 
-	--black-border: 1px solid #000000;
+	--black-border: 2px solid #101010;
+	--white-border: 2px solid #FFFFFF;
 	--lightgrey-border: 1px solid #d7d7d7;
-	--royal-blue-border: 1px solid #a4bcff;
 	--inset-grey-border: inset 0px 0px 16px -1px rgba(130,130,130,1);
 
-	--baby-blue: #00c3ff;
 	--white: #ffffff;
-	--black: #000000;
+	--black: #101010;
+	--lighter-black: #1A1A1A;
+	--beige: #D5BBAD;
+	--baby-yellow: #FAF7E5;
+	--baby-red: #FFE4DE;
+	--purple-blue: #486AB7;
+	--burn-orange: #F26B60;
+
+	--baby-blue: #00c3ff;
 	--low-opacity-grey: #dededee8;
 	--medium-grey: #828282;
 	--low-medium-grey: #cacaca;
@@ -82,9 +65,25 @@ html, body {
 	--forest-green: #2a6b47;
 	--green: #55bd49;
 
+	/* Font Sizes */
 	--normal: 1.2em;
 	--normal-mobile: 5.8vw;
+
 	--sub-header: 1.4em;
+	--logo: 52px;
+	--regular-mobile: 24px;
+	--regular: 21px;
+	--regular-min: 18px;
+
+	/* Border-radius */
+	--radius-10: 10px;
+
+	/* Margins between elements */
+	--padding-card: 16px 18px 16px 18px;
+	--padding-filter: 16px 16px 16px 0px;
+	--padding-filter-mobile: 8px 16px 8px 0px;
+	--padding-tabs: 0px 16px 16px 0px;
+
 }
 
 
@@ -117,8 +116,24 @@ html, body {
 	transform: none;
 }
 
+a {
+	color: var(--black);
+	text-decoration: none;
+}
 a:hover {
-	text-transform: capitalize;
+	text-transform: underline;
+}
+
+p {
+	margin: 0;
+}
+
+.underline {
+	text-decoration: underline;
+}
+.hidden {
+	display: none;
+	visibility: hidden;
 }
 
 /* 
@@ -138,455 +153,430 @@ ANIMATION KEYFRAMES
   }
 
 
-  /* 
-====
-MASK
-----
-*/
-div.mask {
-	position: fixed;
-	top: -50px;
-	left: -25vw;
-
-	width: 150vw;
-	height: 50px;
-
-
-	background: none;
-
-	border-radius: 100%;
-
-	-webkit-box-shadow: var(--white-blur-shadow);
-	-moz-box-shadow: var(--white-blur-shadow);
-	box-shadow: var(--white-blur-shadow);
-
-	z-index: 25;
-}
 /* 
-====
-HEADER
-----
+==============
+= Nav / Logo =
+==============
 */
-nav {
-	position: fixed;
-	left: 2px;
-	top: 2px;
-
-	height: auto;
-	width: 60%;
-
-	mix-blend-mode: exclusion;
-
-	z-index: 150;
-}
-div.header {
-	height: 100%;
-
-	display: flex;
-	background: transparent;
-	opacity: 1;
-
-	z-index: 50;
-}
-div.header div {
+div.logo {
 	position: absolute;
-	margin: 0;
+	top: 32px;
+	left: 35px;
 
-	color: var(--white);
-
-	font-size: 6.5vw;
-	text-transform: uppercase;
-
-	cursor: pointer;
-
-	z-index: 200;
+	z-index: 20;
 }
-div.header div a img {
-	width: 330px;
-	height: auto;
+div.logo a, div.logo-mobile a {
+	font-size: var(--logo);
 
-	cursor: pointer;
+	/* font-family: bely-display, sans-serif;
+	font-weight: 400;
+	font-style: normal; */
+
+	font-family: bely, serif;
+	font-weight: 700;
+	font-style: normal;
+}
+div.logo-mobile a {
+	display: none;
+	visibility: hidden;
 }
 
 /* 
-====
-INFO
-----
+================
+= Wrapper Main =
+================
 */
-div.info {
-	position: absolute;
-	top: 300px;
-	left: 5px;
-
-	width: 30%;
-	min-width: 300px;
-	height: auto;
-
-	font-size: 1.8em;
-
-	text-transform: uppercase;
-
-	color: var(--black);
-
-	z-index: 300;
-}
-div.info .btn {
+/* Wrapper Main */
+.wrapper-main {
 	position: relative;
 
-	font-size: 3.5vw;
-	margin: 0;
+	width: calc(100% - 70px);
 
-	cursor: pointer;
+	padding-left: 35px;
+	padding-right: 35px;
 
-	z-index: 301;
-}
-div.info a {
-	color: var(--black);
-}
-div.info div.info-wrapper {
-	display: flex;
-	align-items: flex-start;
-
-	flex-wrap: wrap;
-
-	cursor: default;
-}
-div.info div.info-hide {
-	opacity: 0;
-}
-div.info div.info-show {
-	opacity: 1;
+	background: var(--white);
 }
 
 /* 
-======
-FRAMES
-------
+==============
+ = Header ===
+==============
 */
-div.frame {
-	position: absolute;
-	left: -50px;
 
-	height:100%;
-	width:  100%;
-	min-width: 300px;
-	min-height: 405px;
+div.header {
+	width: 100%;
+
+	font-size: var(--regular-min);
+
+	border-bottom: var(--black-border);
+}
+div.header div.header-wrapper {
+	width: 100%;
+	height: calc(100% + 32px);
 
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+
+	padding: 8px 0px;
+
+}
+/* 
+------------------------
+- Header - Color Theme - 
+------------------------
+*/
+div.header-wrapper div.color-theme-wrapper {
+	height: 50%;
+
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+div.header-wrapper div.tabs-wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+}
+div.header-wrapper div.color-theme-wrapper p {
+	margin: var(--padding-filter);
+}
+div.header-wrapper div.color-theme-wrapper div {
+	height: 26px;
+	width: 26px;
+
+	border-radius: 5px;
+
+	box-shadow: var(--soft-box-shadow);
+}
+
+div.header-wrapper div.color-theme-wrapper div:nth-child(2) {
+	background: var(--white);
+	/* Spacing between color theme btn */
+	margin: var(--padding-filter);
+}
+div.header-wrapper div.color-theme-wrapper div:nth-child(3) {
+	background: var(--baby-yellow);
+	/* Spacing between color theme btn */
+	margin: var(--padding-filter);
+}
+div.header-wrapper div.color-theme-wrapper div:nth-child(4) {
+	background: var(--baby-red);
+	/* Spacing between color theme btn */
+	margin: 16px 0px 16px 0px;
+}
+
+/* 
+-------------------
+ - Header - Tabs - 
+-------------------
+*/
+div.header-wrapper div.tabs-wrapper  {
+	height: 50%;
+	width: 100%;
+
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+}
+div.header-wrapper div.tabs-wrapper div.tab {
+	margin-bottom: 8px;
+}
+div.header-wrapper div.tabs-wrapper div.tab::not(:last-child) {
+	/* All except last have margin-right */
+	margin: var(--padding-tabs);
+}
+div.header-wrapper div.tabs-wrapper div.tab-1 {
+	display: flex;
+	flex-wrap: nowrap;
+}
+div.header-wrapper div.tabs-wrapper div.tab img {
+	height: 26px;
+	width: auto;
+
+	margin-right: 16px;
+}
+
+
+
+
+
+/* 
+=============
+ = Footer ===
+=============
+*/
+div.footer {
+	width: 100%;
+	/* temp */
+	height: 100px;
+
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
 
-	font-size: 1.4em;
-	text-align: center;
+	border-top: var(--black-border);
+}
+div.footer p {
+	font-size: var(--regular);
 
-	animation: 3s ease-out 0s 1 slideFromTop;
+	margin: 0;
+}
+
+/* 
+==============
+= Lib - Main =
+==============
+*/
+div.lib-wrapper {
+	position: relative;
+
+	width: 100%; 
 
 	background: var(--white);
 
 	z-index: 10;
 }
-.frame p {
-	position: absolute;
 
-	color: var(--baby-blue);
-
-	z-index: 15;
-}
-.frame p span {
+/* 
+----------------
+- Lib - Filter -
+----------------
+*/
+div.lib-wrapper div.lib-filter {
 	width: 100%;
 
-	font-size: 1.2em;
-}
-.frame img {
-	position: relative;
-	bottom: -40px;
-
-	height: 80%;
-	width: auto;
-
-	z-index: 5;
-}
-
-/* 
-============
-CONVERSATION
-------------
-*/
-div.conversation {
-	position: absolute;
-	right: 0;
-	bottom: 0px;
-
-	height: auto;
-	max-width: 50vh;
-	height: auto;
-
-	border-radius: 3px;
-
-	padding-left: 20px;
-	padding-right: 20px;
-
-	text-align: center;
-
-	text-transform: uppercase;
-
-	overflow-y: scroll;
-
-	/* display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	flex-wrap: wrap; */
-	vertical-align: baseline;
-
-	/* -webkit-box-shadow: var(--grey-blur-shadow);
-	-moz-box-shadow: var(--grey-blur-shadow);
-	box-shadow: var(--grey-blur-shadow); */
-
-	color: var(--black);
-
-	z-index: 15;
-}
-/* div 1 */
-div.conversation div:nth-child(1) {
-	font-size: var(--sub-header);
-}
-div.conversation div:nth-child(1) p {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-/* div 2 */
-div.conversation div:nth-child(2) {
-	text-align: left;
-
-	font-size: var(--normal);
-}
-div.conversation div:nth-child(2) p {
-	margin-top: 20px;
-	margin-bottom: 20px;
-
-	text-transform: none;
-}
-/* div 3 */
-div.conversation div:nth-child(3) {
-	/* padding-top: 20px; */
-	padding-bottom: 40px;
-
-	font-size: 1.4em;
-
-	/* display: flex;
-	justify-items: center; */
-
-	text-transform: uppercase;
-}
-div.conversation div:nth-child(3) a {
-	margin-bottom: 40px;
-
-	color: var(--black);
-
-	font-size: 48px;
-
-	text-decoration: none;
-}
-/* hover effect:  */
-div.conversation div:nth-child(3) :hover {
-	text-transform: capitalize;
-}
-div.link-questionnaire {
 	display: flex;
-	justify-content: space-evenly;
-}
-div.link-questionnaire:hover {
-	text-transform: capitalize;
-}
-
-/* 
-&&&&&&&&&&&&&&&&&
-& QUESTIONNAIRE &
-&&&&&&&&&&&&&&&&&
- */
-div.q-wrapper {
-	position: absolute;
-	top: 40px;
-	/* right: 10px; */
-
-	width: 80%;
-	height: auto;
-
-	padding-left: 10%;
-	padding-right: 10%;
-
-	display: flex;
-	justify-content: center;
 	flex-wrap: wrap;
 
-	font-size: var(--normal);
+	padding-bottom: 16px;
 
-	background: var(--white)
 }
- /* Header */
-div.q-wrapper p:nth-child(1) {
-	text-transform: uppercase;
-	font-size: var(--sub-header);
+div.lib-filter-item-wrapper {
+	margin: var(--padding-filter);
 }
-div.q-wrapper div.description {
-	 width: 50%;
-	 min-width: 500px;
+div.lib-filter div.lib-filter-item-wrapper:nth-child(1) {
+	/* Set width of 1st #Book */
+	width: 160px;
+}
+div.lib-filter div.lib-filter-item-wrapper:nth-child(2) {
+	/* Set width of 2nd #Contact */
+	width: 190px;
+}
+div.lib-filter div.lib-filter-item-wrapper:nth-child(3) {
+	/* Set width of 3rd #Why */
+	width: 136px;
+}
+div.lib-filter-item-wrapper div {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+
+
+	padding: 6px 14px 6px 14px; 
+
+	border-radius: 1000px;
+
+	border: var(--black-border);
+
+}
+div.lib-filter-item-wrapper div p {
+	font-size: var(--regular);
+
+}
+div.lib-filter-item-wrapper div img {
+	width: 20px;
+	height: auto;
+
+	transform: rotate(45deg);
+}
+
+
+
+/* 
+-----------------
+- Lib - Content -
+-----------------
+*/
+div.lib-wrapper div.lib-content {
+	width: 100%;
+
+	display: grid;
+	grid-template-columns: auto 364px auto 364px auto;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: ". card-1 . card-2 ." ". card-3 . . .";
+	row-gap: 78px;
+
+	margin-bottom: 78px;
+}
+
+div.lib-content div.card {
+	/* temp */
+	height: 464px;
+
+	border: var(--black-border);
+	border-radius: var(--radius-10);
+}
+div.lib-content div.card:nth-child(1) {
+	grid-area: card-1
+}
+div.lib-content div.card:nth-child(2) {
+	grid-area: card-2
+}
+div.lib-content div.card:nth-child(3) {
+	grid-area: card-3
 }
 
 /* 
-=========
-COPYRIGHT
----------
+--------------------------------
+- Lib - Content - Card Content -
+--------------------------------
 */
-div.copyright {
-	position: absolute;
-	left: 20px;
-	bottom: 20px;
 
-	z-index: 15;
+div.card div {
+	display: flex;
+	justify-content: center;
+
+	font-size: var(--regular);
 }
-div.copyright p {
-	font-size: 0.8em;
+div.card .hashtag {
+	width: calc(100% - 36px);
 
-	color: var(--medium-grey);
+	justify-content: left;
 
-	text-transform: uppercase;
+	padding: var(--padding-card);; 
 
-	margin: 0;
+	border-bottom: var(--black-border);
 }
-div.copyright p span {
-	visibility: hidden;
-	display: none;
+
+div.card .content {
+	height: 58%;
+
+	flex-wrap: wrap;
+
+	padding: var(--padding-card); 
 }
+.content img {
+	width: 50%;
+	height: auto;
+
+	margin-bottom: 12px;
+}
+.content p {
+	width: 100%;
+
+	text-align: center;
+}
+div.card:nth-child(2) .content p {
+	/* Set text for #Information */
+	text-align: left;
+}
+
+div.card .btn-wrapper {
+	width: calc(100% - 36px);
+
+	padding: var(--padding-card);
+}
+div.card .btn-wrapper div {
+	padding-top: 18px;
+	padding-bottom: 18px;
+
+	width: 80%;
+
+	border: var(--black-border);
+
+	border-radius: 1000px;
+}
+div.card .btn-wrapper div button {
+	border: none;
+	background: none;
+
+	font-size: inherit;
+}
+
+
+
+
 
 /* 
 %%%%%%%%%%%%%%%%%%
-% MEDIA QUERRIES %
+% Media Querries %
 %%%%%%%%%%%%%%%%%%
 */
-@media screen and (max-width: 520px) {
-	/* Hides masks in mobile view to force all black header */
-	div.mask {
-		/* display: none; */
-	}
-	div.header div a img {
-		width: 300px;
-	}
+@media screen and (max-width: 870px) {
 
-	div.wrapper {
-		/* margin-top: 20px; */
-
-		height: auto;
-
-		flex-wrap: wrap;
-
-		animation: 4s ease-out 0s 1 slideFromTop;
+	/* 
+	==============
+	= Nav / Logo =
+	==============
+	*/
+	div.logo {
+		display: none;
+		visibility: hidden;
 	}
-	/* Sets info-wrapper to no-display when on mobile*/
-	div.info div.info-hide {
-		display: none; 
-		opacity: 0;
-	}
-	div.info div.info-show {
+	div.logo-mobile a {
 		display: block;
-		opacity: 1;
-	}
-
-	div.info {
-		position: static;
-
-		height: 100%;
-		width: calc(100% - 10px);
-
-		padding-left: 10px;
-		padding-right: 10px;
-
-		margin-top: 260px;
-
-		background: var(--light-grey);
-
-		font-size: 8vw;
-
-		z-index: 25;
-	}
-	div.info .btn {
-		font-size: 8vw;
-	}
-
-	div.frame {
-		position: static;
-		height: auto;
-		width: 100%;
-
-		font-size: 1.2em;
-
-		animation: none;
-
-		/* background: var(--low-opacity-grey); */
-	}
-	div.frame img {
-		bottom: 0;
-
-		width: 100%;
-		height: auto;
-	}
-
-	div.conversation {
-		position: static;
-
-		height: auto;
-		max-height: none;
-		width: 100%;
-		max-width: none;
-
-		overflow-y: auto;
-
-		border-radius: 0;
-
-		margin-bottom: 10vh;
-		/* margin-top: 10vh; */
-
-		font-size: 8vw;
-	
-		text-align: center;
-	}
-	/* set description text-size */
-	div.conversation div:nth-child(2) {
-		font-size: var(--normal-mobile);
-	}
-	div.conversation div:nth-child(3) {
-		font-size: var(--sub-header);
-	}
-
-	/* reformat width from 80% to 100% on mobile  */
-	div.q-wrapper {
-		width: calc(100% - 40px);
-		min-width: auto;
-		right: 0;
-		top: 250px;
-
-		padding-left: 20px;
-		padding-right: 20px;
-
-		font-size: var(--normal-mobile);
-	}
-	div.q-wrapper div.description {
-		width: 98%;
-		min-width: auto;
-	}
-
-	nav.navigation-q {
-		position: relative;
-	}
-
-	div.copyright {
-		position: static;
-	
-	}
-	div.copyright p span {
 		visibility: visible;
-		display: inline-block;
 	}
-  }
+
+	/* 
+	================
+	= Wrapper Main =
+	================
+	*/
+	/* Wrapper Main */
+	.wrapper-main {
+		width: calc(100% - 70px);
+		height: calc(100% - 16px);
+
+		padding: 8px 35px 8px 35px;
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+
+	/* 
+	----------------
+	- Lib - Filter -
+	----------------
+	*/
+	div.lib-wrapper div.lib-filter {
+		/* Create more vertical space between #item and top-border/cards */
+		padding-top: 16px;
+		padding-bottom: 32px;
+	}
+	div.lib-filter-item-wrapper {
+		margin: var(--padding-filter-mobile);
+	}
+
+	/* 
+	-----------------
+	- Lib - Content -
+	-----------------
+	*/
+	div.lib-wrapper div.lib-content {
+		grid-template-columns:100%;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-areas: "card-1" "card-2" "card-3";
+		row-gap: 64px;
+	}
+	div.lib-content div.card {
+		width: 100%;
+		min-width: 286px;
+		max-width: 388px;
+		justify-self: center;
+		/* Set font to mobile */
+		font-size: var(--regular-mobile);
+	}
+
+	/* 
+	--------------------------------
+	- Lib - Content - Card Content -
+	--------------------------------
+	*/
+	div.card div {
+		font-size: var(--regular-mobile);
+	}
+
+}
 
 
