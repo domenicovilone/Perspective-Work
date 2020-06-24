@@ -370,6 +370,7 @@ div.lib-filter div.lib-filter-item-wrapper:nth-child(3) {
 div.lib-filter-item-wrapper div {
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 	flex-wrap: nowrap;
 
 
@@ -457,8 +458,8 @@ div.card .content {
 	padding: var(--padding-card); 
 }
 .content img {
-	width: 50%;
-	height: auto;
+	width: auto;
+	height: 78%;
 
 	margin-bottom: 12px;
 }
@@ -488,6 +489,9 @@ div.card .btn-wrapper div {
 	border-radius: 1000px;
 }
 div.card .btn-wrapper div button {
+	margin: 0;
+	padding: 1px 6px 1px 6px;
+
 	border: none;
 	background: none;
 
