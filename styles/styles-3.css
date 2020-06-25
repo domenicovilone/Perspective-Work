@@ -77,13 +77,13 @@ button {
 .smooth-slide-up-main-wrapper {
 	top: 0;
 
-	transition: top 1.5s ease-out;
-	-webkit-transition: top 1.5s ease-out;
-	-moz-transition: top 1.5s ease-out;
-	-o-transition: top 1.5s ease-out;
+	transition: top 1.5s ease-out, background-color 1s linear;
+	-webkit-transition: top 1.5s ease-out, background-color 1s linear;
+	-moz-transition: top 1.5s ease-out, background-color 1s linear;
+	-o-transition: top 1.5s ease-out, background-color 1s linear;
 }
 .transform-main-wrapper {
-	top: 80%;
+	top: 100%;
 }
 
 .no-transform {

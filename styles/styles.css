@@ -106,26 +106,17 @@ div.lib-filter-item-wrapper div:hover {
 div.card:hover {
 	transform: translate(4px, -6px);
 }
-
-.transform-1 {
-	transform: rotate3d(1, 1, 1, 20deg);
-
-	transition: height 1s ease-out, transform 0.5s ease-out;
-	-webkit-transition: height 1s ease-out, transform 0.5s ease-out;
-	-moz-transition: height 1s ease-out, transform 0.5s ease-out;
-	-o-transition: height 1s ease-out, transform 0.5s ease-out;	
-}
-.transform-2 {
-
-	transition: opacity 1s ease-in-out;
-	-webkit-transition: opacity 1s ease-in-out;
-	-moz-transition: opacity 1s ease-in-out;
-	-o-transition: opacity 1s ease-in-out;	
-
+/* transition on bgd color for main wrapper */
+div.wrapper-main {
+	/* transition: background-color 1s linear;
+	-webkit-transition: background-color 1s linear;
+	-moz-transition: background-color 1s linear;
+	-o-transition: background-color 1s linear; */
 }
 .no-transform:hover {
 	transform: none;
 }
+
 
 a {
 	color: var(--black);
@@ -352,8 +343,6 @@ div.lib-wrapper {
 	position: relative;
 
 	width: 100%; 
-
-	background: var(--white);
 
 	z-index: 10;
 }
