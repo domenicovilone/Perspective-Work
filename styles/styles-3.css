@@ -208,28 +208,6 @@ div.read-btn-wrapper div button {
 
 	background: var(--blue);
 }
-/* Free Online tag */
-div.read-btn-wrapper div:nth-child(2) {
-	height: 64px;
-	width: 64px;
-
-	display: flex;
-	justify-content: center;
-	align-content: center;
-
-	padding: 18px;
-
-	border: 2px solid var(--blue);
-	border-radius: 500px;
-
-	transform: rotate(26deg);
-
-	text-align: center;
-
-	color: var(--blue);
-
-	font-size: var(--regular);
-}
 
 
 /* 
@@ -280,6 +258,10 @@ div.book div.image-wrapper div.tag {
 %%%%%%%%%%%%%%%%%%
 */
 @media screen and (max-width: 870px) {
+
+	/* ================
+	= Book Details =
+	================= */
 	div.book {
 		/* width: calc(100% - 32px); */
 	
@@ -289,6 +271,24 @@ div.book div.image-wrapper div.tag {
 	
 		/* font-family: inherit; */
 		font-size: var(--regular-mobile);
+	}
+
+	/* 
+	------------------------
+	- book content Wrapper - 
+	------------------------
+	*/
+
+	div.details-wrapper div.item {
+		/* item div content does not see height change */
+		flex-wrap: wrap;
+		justify-content: start;
+
+		font-size: var(--regular);
+	}
+
+	div.details-wrapper div.item p.category {
+		width: 100%;
 	}
 
 	/* 
