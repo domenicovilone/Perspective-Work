@@ -48,22 +48,15 @@ body {
 	--white: #ffffff;
 	--black: #101010;
 	--lighter-black: #1A1A1A;
+	--light-grey: #EDEDED;
 	--beige: #D5BBAD;
 	--baby-yellow: #FAF7E5;
 	--baby-red: #FFE4DE;
 	--purple-blue: #486AB7;
+	--baby-blue: #a4bcff;
 	--burn-orange: #F26B60;
-
-	--baby-blue: #00c3ff;
-	--low-opacity-grey: #dededee8;
-	--medium-grey: #828282;
-	--low-medium-grey: #cacaca;
-	--light-grey: #d7d7d7;
-	--red-orange: #f1960d;
-	--brown: #b3a7a7;
-	--royal-blue: #a4bcff;
-	--forest-green: #2a6b47;
-	--green: #55bd49;
+	--flash-green: #3BE2A2;
+	--forest-green: #2DA275;
 
 	/* Font Sizes */
 	--normal: 1.2em;
@@ -79,10 +72,10 @@ body {
 	--radius-10: 10px;
 
 	/* Margins between elements */
+	--padding-tabs: 6px 14px 6px 14px;
 	--padding-card: 16px 18px 16px 18px;
-	--padding-filter: 16px 16px 16px 0px;
-	--padding-filter-mobile: 8px 16px 8px 0px;
-	--padding-tabs: 0px 16px 16px 0px;
+	--margin-filter: 16px 16px 16px 0px;
+	--margin-filter-mobile: 8px 16px 8px 0px;
 
 }
 
@@ -95,7 +88,25 @@ body {
 	justify-content: center;
 }
 
-/* Transform */
+/* 
+*************
+* Transform *
+*************
+*/
+/* Transform filter, cards on hover */
+.transform-position {
+	transition: transform 0.3s ease-in-out;
+	-webkit-transition: transform 0.3s ease-in-out;
+	-moz-transition: transform 0.3s ease-in-out;
+	-o-transition: transform 0.3s ease-in-out;
+}
+div.lib-filter-item-wrapper div:hover {
+	transform: translate(4px, -6px);
+}
+div.card:hover {
+	transform: translate(4px, -6px);
+}
+
 .transform-1 {
 	transform: rotate3d(1, 1, 1, 20deg);
 
@@ -219,7 +230,7 @@ div.header div.header-wrapper {
 	justify-content: flex-end;
 	flex-wrap: wrap;
 
-	padding: 8px 0px;
+	padding: 16px 0px 8px 0px;
 
 }
 /* 
@@ -239,7 +250,7 @@ div.header-wrapper div.tabs-wrapper {
 	flex-wrap: nowrap;
 }
 div.header-wrapper div.color-theme-wrapper p {
-	margin: var(--padding-filter);
+	margin: var(--margin-filter);
 }
 div.header-wrapper div.color-theme-wrapper div {
 	height: 26px;
@@ -253,12 +264,12 @@ div.header-wrapper div.color-theme-wrapper div {
 div.header-wrapper div.color-theme-wrapper div:nth-child(2) {
 	background: var(--white);
 	/* Spacing between color theme btn */
-	margin: var(--padding-filter);
+	margin: var(--margin-filter);
 }
 div.header-wrapper div.color-theme-wrapper div:nth-child(3) {
 	background: var(--baby-yellow);
 	/* Spacing between color theme btn */
-	margin: var(--padding-filter);
+	margin: var(--margin-filter);
 }
 div.header-wrapper div.color-theme-wrapper div:nth-child(4) {
 	background: var(--baby-red);
@@ -281,10 +292,19 @@ div.header-wrapper div.tabs-wrapper  {
 }
 div.header-wrapper div.tabs-wrapper div.tab {
 	margin-bottom: 8px;
+	padding: var(--padding-tabs);
+
+	border-radius: 500px;
+}
+div.header-wrapper div.tabs-wrapper div.tab:nth-child(1) {
+	background: var(--light-grey);
+}
+div.header-wrapper div.tabs-wrapper div.tab:nth-child(3) {
+	background: var(--flash-green);
 }
 div.header-wrapper div.tabs-wrapper div.tab::not(:last-child) {
 	/* All except last have margin-right */
-	margin: var(--padding-tabs);
+	margin: var(--margin-filter);
 }
 div.header-wrapper div.tabs-wrapper div.tab-1 {
 	display: flex;
@@ -353,7 +373,7 @@ div.lib-wrapper div.lib-filter {
 
 }
 div.lib-filter-item-wrapper {
-	margin: var(--padding-filter);
+	margin: var(--margin-filter);
 }
 div.lib-filter div.lib-filter-item-wrapper:nth-child(1) {
 	/* Set width of 1st #Book */
@@ -374,7 +394,7 @@ div.lib-filter-item-wrapper div {
 	flex-wrap: nowrap;
 
 
-	padding: 6px 14px 6px 14px; 
+	padding: var(--padding-tabs); 
 
 	border-radius: 1000px;
 
@@ -524,18 +544,25 @@ div.card .btn-wrapper div button {
 	}
 
 	/* 
+	-------------------
+	- Header - Tabs - 
+	-------------------
+	*/
+	div.header-wrapper div.tabs-wrapper  {
+		flex-wrap: wrap;
+	}
+
+	/* 
 	================
 	= Wrapper Main =
 	================
 	*/
 	/* Wrapper Main */
 	.wrapper-main {
-		width: calc(100% - 70px);
+		width: calc(100% - 36px);
 		height: calc(100% - 16px);
 
-		padding: 8px 35px 8px 35px;
-		padding-left: 35px;
-		padding-right: 35px;
+		padding: 8px 18px 8px 18px;
 	}
 
 	/* 
@@ -549,7 +576,7 @@ div.card .btn-wrapper div button {
 		padding-bottom: 32px;
 	}
 	div.lib-filter-item-wrapper {
-		margin: var(--padding-filter-mobile);
+		margin: var(--margin-filter-mobile);
 	}
 
 	/* 

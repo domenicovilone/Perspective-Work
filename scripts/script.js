@@ -32,7 +32,8 @@ function revealBook1(){
     libWrapper.className = "lib-wrapper hidden";
     bookDetailsWrapper.className = "book-details-wrapper";
 }
-
+// Utility function for revealBook1
+//  
 function scrollToTop(){
     window.scrollTo(0,0);
 }

@@ -39,16 +39,17 @@
 	--regular-mobile: 24px;
 	--regular: 21px;
 	--regular-min: 18px;
+	--call-action-btn: 32px;
 
 	/* Border-radius */
 	--radius-10: 10px;
 
-	/* Margins between elements */
+	/* Margin/padding*/
+	--padding-tabs: 6px 14px 6px 14px;
 	--padding-card: 16px 18px 16px 18px;
-	--padding-filter: 16px 16px 16px 0px;
-	--padding-filter-mobile: 8px 16px 8px 0px;
-	--padding-tabs: 0px 16px 16px 0px;
-	--padding-action-btn: 16px 48px 16px 48px;
+	--margin-filter: 16px 16px 16px 0px;
+	--margin-filter-mobile: 8px 16px 8px 0px;
+	--padding-action-btn: 24px 48px 24px 48px;
 
 }
 
@@ -117,9 +118,9 @@ div.book-details-wrapper {
 	z-index: 20;
 }
 div.book {
-	width: calc(100% - 32px);
+	width: calc(100% - 16px);
 
-	padding: 16px;
+	padding: 18px 8px 64px 8px;
 
 	display: flex;
 	flex-wrap: nowrap;
@@ -148,7 +149,7 @@ div.details-wrapper div.item {
 	justify-content: center;
 	flex-wrap: nowrap;
 
-	margin: var(--padding-filter);
+	margin: var(--margin-filter);
 }
 div.details-wrapper div.item p.category {
 	line-height: 36px;
@@ -193,9 +194,6 @@ div.book div.book-specification-wrapper div.read-btn-wrapper {
 
 	padding: 16px 0 0 0;
 }
-div.read-btn-wrapper div {
-	margin-right: 16px;
-}
 div.read-btn-wrapper div button {
 	border: none;
 	border-radius: 500px;
@@ -203,7 +201,7 @@ div.read-btn-wrapper div button {
 	padding: var(--padding-action-btn);
 
 	font-family: aktiv-grotesk, sans-serif;
-	font-size: var(--regular);
+	font-size: var(--call-action-btn);
 	color: var(--white);
 
 	background: var(--blue);
@@ -286,10 +284,23 @@ div.book div.image-wrapper div.tag {
 
 		font-size: var(--regular);
 	}
+	div.details-wrapper div.item:nth-child(2), div.details-wrapper div.item:nth-child(4) {
+		margin-right: 0;
+	}
 
-	div.details-wrapper div.item p.category {
+	/* -- Buttons -- */
+	div.book div.book-specification-wrapper {
 		width: 100%;
 	}
+	div.book div.book-specification-wrapper div.read-btn-wrapper {
+		justify-content: center;
+		
+		padding: 16px 0 0 0;
+	}
+	div.read-btn-wrapper div button {
+
+	
+	}	
 
 	/* 
 	-----------------
@@ -313,26 +324,7 @@ div.book div.image-wrapper div.tag {
 	
 		/* width: 64px; */
 		/* height: 64px; */
-	}
-
-	/* -- Buttons -- */
-	div.book div.book-specification-wrapper div.read-btn-wrapper {
-		display: flex;
-		justify-content: left;
-		align-content: center;
-
-		padding: 16px 0 0 0;
-	}
-
-	/* 
-	------------------------
-	- book content Wrapper - 
-	------------------------
-	*/
-	div.book div.book-specification-wrapper {
-		width: 100%;
-	}
-
+	} 
 }
 
 
