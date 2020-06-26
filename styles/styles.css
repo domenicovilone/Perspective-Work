@@ -549,7 +549,6 @@ div.card .btn-wrapper div button {
 	/* Wrapper Main */
 	.wrapper-main {
 		width: calc(100% - 36px);
-		height: calc(100% - 16px);
 
 		padding: 8px 18px 8px 18px;
 	}
