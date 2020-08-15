@@ -1,13 +1,12 @@
 // Element to modify
-var LandingPageWrapper = document.querySelectorAll('div.landing-page');
-var MainWrapper = document.querySelectorAll('div.wrapper-main');
-var libWrapper = document.querySelector('div.lib-wrapper');
-var bookDetailsWrapper = document.querySelector('div.book-details-wrapper');
+var LandingPageWrapper = document.querySelector('div.landing-page');
 
 // Trigger elements
-var LandingPageBtn = document.querySelectorAll('div.landing-page p');
-var viewBook1 = document.querySelector('#view-book');
-var colorThemeBtn = document.querySelectorAll('.color-theme');
+var LandingPageBtn = document.querySelectorAll('div.content-2 div.services-wrapper button');
+
+
+// States
+var isOnMain = true;
 
 // Toggle landing page wrapper
 LandingPageBtn.forEach( (el,i) => el.addEventListener("click", function(){
@@ -15,35 +14,18 @@ LandingPageBtn.forEach( (el,i) => el.addEventListener("click", function(){
 }));
 // Visit Book 1
 viewBook1.addEventListener("click", function(){
+    isOnMain = false;
     revealBook1();
 });
-// Change background color
-colorThemeBtn.forEach( (el,i) => el.addEventListener("click", function(){
-	toggleBgdColor(i);
-}));
 
 
-// Toggles infoWrapper
-function toggleLandingPageWrapper(index){
-    LandingPageWrapper.item(index).className = "landing-page smooth-slide-up";
-    MainWrapper.item(index).className = "wrapper-main smooth-slide-up-main-wrapper";
 
-    document.querySelector('body').style.overflow = "visible";
+// Utility function for toggles
+function isHidden(index, list, keyWord){
+    console.log(index);
+    return list.item(index).classList.contains(keyWord);
 }
-function revealBook1(){
-    scrollToTop();
 
-    libWrapper.className = "lib-wrapper hidden";
-    bookDetailsWrapper.className = "book-details-wrapper";
-}
-// Utility function for revealBook1
-function scrollToTop(){
-    window.scrollTo(0,0);
-}
-// Set background color main
-function toggleBgdColor(index){
-    if (index === 0){ MainWrapper.item(0).style.backgroundColor = "var(--white)"; }
-    else if (index === 1){ MainWrapper.item(0).style.backgroundColor = "var(--baby-yellow)"; }
-    else if (index === 2){ MainWrapper.item(0).style.backgroundColor = "var(--baby-red)"; }
-}
+
+
 

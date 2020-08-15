@@ -11,12 +11,16 @@ app.use("/styles/fonts", express.static(__dirname + '/styles/fonts'));
 app.use("/scripts", express.static(__dirname + '/scripts'));
 
 // for HTML
-app.get('/', function (req, res) {
-  res.sendFile(path.join(`${__dirname}/views/index.html`));
-});
-app.get('/questionnaire', function (req, res) {
-  res.sendFile(path.join(`${__dirname}/views/questionnaire.html`));
-});
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(`${__dirname}/views/index.html`));
+// });
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(`${__dirname}/views/worksonperspective.html`));
+// });
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(`${__dirname}/views/index.html`));
+// });
+
 
 
 

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1103.05 1103.05">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #989898;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="bgd">
+    <circle class="cls-1" cx="551.53" cy="551.53" r="551.53"/>
+    <circle class="cls-2" cx="551.53" cy="551.53" r="551.53"/>
+    <circle cx="551.53" cy="551.53" r="551.53"/>
+  </g>
+  <g id="Arrow_v2_white" data-name="Arrow v2 white">
+    <path class="cls-2" d="M639.88,1003.17l43.91-57.06L278.9,634.51q-.66,45.4-1.33,90.81Z" transform="translate(-88.47 -88.47)"/>
+    <path class="cls-3" d="M561.91,993" transform="translate(-88.47 -88.47)"/>
+    <path class="cls-2" d="M640,1004.64l-43.91-57.06L1000.94,636q.66,45.4,1.33,90.81Z" transform="translate(-88.47 -88.47)"/>
+    <path class="cls-2" d="M678.59,974.53l-38.71,30.64-36-29.52.51-699.76h72Q677.47,625.21,678.59,974.53Z" transform="translate(-88.47 -88.47)"/>
+  </g>
+</svg>
