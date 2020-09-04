@@ -59,7 +59,6 @@ body {
     --blue-hover: #2e59ab;
 	--red:#C44332;
 
-
     /* Font Sizes */
     --fs-dom: 2.5em;
 	--fs-large: 1.6em;
@@ -67,10 +66,6 @@ body {
 	--fs-small: 1em;
     --fs-tiny: 0.8em;
 	--fs-regular-mobile: 0.6em;
-	--fs-small-mobile: 1.5vw;
-
-	/* Border Radius */
-	--radius-10: 12px;
 
 	/* Margin and Padding */
     --margin-next: 6px;

@@ -58,7 +58,6 @@ body {
 	--medium-grey: #989898;
 	--dark-grey:#626262;
 	--green: #20694D;
-	--green-2: #348a69;
 	--green-dark: #0e4731;
 	--blue: #2C69DE;
 	--blue-navy: #153272;
@@ -76,13 +75,6 @@ body {
 	--fs-tiny: 0.8em;
 	--fs-large-mobile: 1.3em;
 	--fs-regular-mobile: 0.6em;
-	--fs-small-mobile: 1.5vw;
-
-	/* library rows height */
-	--height-lib-row: 140px;
-
-	/* Border Radius */
-	--radius-10: 12px;
 
 	/* Margin and Padding */
 	--margin-next: 6px;
@@ -104,7 +96,6 @@ body {
 * Animation *
 *************
 */
-
 .pos-trs-r {
 	animation-name: slideFromRight;
 	animation-duration: 2s;
@@ -115,9 +106,9 @@ body {
 }
 
 /* 
-===================
+*******************
 ANIMATION KEYFRAMES
-------------------- 
+*******************
 */
 @keyframes slideFromRight {
 	0% {
@@ -138,11 +129,10 @@ ANIMATION KEYFRAMES
 
 
 /* 
-========
+=======
 General 
-========
+=======
 */
-
 a {
 	text-decoration: none;
 }
@@ -154,6 +144,11 @@ p {
 	margin: 0;
 }
 
+/* 
+===============
+Utility Classes
+===============
+*/
 .btn {
 	text-decoration: underline;
 	cursor: pointer;
@@ -168,11 +163,6 @@ p {
 	cursor: pointer;
 }
 
-/* 
-===============
-Utility Classes
-===============
-*/
 .underline:hover {
 	text-decoration: underline;
 }

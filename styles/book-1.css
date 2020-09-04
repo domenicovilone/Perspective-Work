@@ -74,11 +74,7 @@ body {
 	--fs-regular: 1.1em;
 	--fs-small: 1em;
     --fs-tiny: 0.8em;
-	--fs-regular-mobile: 3.2vw;
-	--fs-small-mobile: 1.5vw;
-
-	/* Border Radius */
-	--radius-10: 12px;
+    --fs-regular-mobile: 0.6em;
 
 	/* Margin and Padding */
     --margin-next: 6px;
@@ -88,9 +84,9 @@ body {
 }
 
 /* 
-===============
-Utility Classes
----------------
+=======
+General
+=======
 */
 a {
 	color: var(--black);
@@ -104,6 +100,11 @@ p {
 	margin: 0;
 }
 
+/* 
+===============
+Utility Classes
+===============
+*/
 .btn {
 	text-decoration: underline;
 	cursor: pointer;
