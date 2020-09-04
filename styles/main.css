@@ -561,7 +561,25 @@ div.lib-row-wrapper .lib-row-1-show-hashtag > p, div.lib-row-wrapper .lib-row-1-
 .more-btn-1 {
 	width: 90px;
 
+	max-height: 40px;
+	height: 40px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: var(--fs-regular);
+
+	border-radius: 1000px;
+
 	align-self: center;
+
+	cursor: pointer;
+
+	background: var(--white);
+}
+.more-btn-1:hover {
+	cursor: pointer;
 }
 .more-btn-2, .more-btn-3 {
 	width: 160px;
@@ -585,9 +603,11 @@ div.lib-row-wrapper .lib-row-1-show-hashtag > p, div.lib-row-wrapper .lib-row-1-
 
 	margin-right: var(--margin-next);
 
-	background: var(--white);
+	background: var(--blue-navy);
 
-	border-radius: 1000px;
+	color: var(--white);
+
+	border-radius: 9px;
 
 	cursor: auto;
 }
@@ -1091,19 +1111,6 @@ div.step-2-wrapper .email-img-wrapper {
 		grid-template-areas: 
 		". title-3 author-3 ."
 		". more-btn-3 more-btn-3 more-btn-3";
-	}
-
-	.hashtag-wrapper-1 {
-		flex-wrap: wrap;
-	}
-	.hashtag-wrapper-1 > div {
-		height: 40px;
-	}
-	.hashtag-wrapper-1 > div:not(:first-child) {
-		margin: var(--margin-next-medium) var(--margin-next-medium)  var(--margin-next-medium) 0;
-	}
-	.hashtag-wrapper-1 > div:first-child {
-		margin: var(--margin-next-medium) var(--margin-next-medium)  var(--margin-next-medium) 0;
 	}
 
 	/* 
