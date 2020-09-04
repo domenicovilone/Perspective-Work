@@ -679,6 +679,8 @@ div.lib-row-wrapper .lib-row-1-show-hashtag > p, div.lib-row-wrapper .lib-row-1-
 }
 
 .lib-row-wrapper .lib-row-final {
+	height: 100px;
+
 	display: grid;
 	grid-template-columns: 12px 30% 30% 20% 10% calc(10% - 24px) 12px;
 	grid-template-rows: var(--height-lib-row);
